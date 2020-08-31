@@ -1,0 +1,33 @@
+{
+  "name": "node-red-contrib-philips-air",
+  "version": "0.1",
+  "description": "Node-RED node for Philips Air purifiers",
+  "main": "node.js",
+  "node-red" : {
+    "nodes": {
+      "philips-air": "node.js"
+    }
+  },
+  "dependencies": {
+    "philips-air": "0.*"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bvmensvoort/node-red-contrib-philips-air.git"
+  },
+  "keywords": [
+    "node-red",
+    "philips",
+    "air",
+    "purifier"
+  ],
+  "author": "Bram van Mensvoort",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bvmensvoort/node-red-contrib-philips-air/issues"
+  },
+  "homepage": "https://github.com/zuhito/node-red-contrib-philips-air#readme"
+}

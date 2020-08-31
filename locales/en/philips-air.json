@@ -1,0 +1,18 @@
+{
+	"philips-air": {
+        "input-label": "😏 Input label",
+        "output-label": "😏 Output label",
+        "name": { 
+            "label": "😏 Name"
+        },
+        "ip-address": { 
+            "label": "😏 Name",
+            "placeholder": "😏 IP address or host name"
+        },
+        "protocol": { 
+            "label": "😏 Protocol"
+        },
+        "error-setvalues": "msg.payload.values is not set.",
+        "error-setvalues": "msg.payload.values is not an JSON object."
+    }
+}
