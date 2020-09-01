@@ -1,0 +1,19 @@
+{
+	"philips-air": {
+        "input-label": "Commando als tekst of instelling als object",
+        "output-label": "JSON object met inhoud",
+        "name": { 
+            "label": "Naam"
+        },
+        "ip-address": { 
+            "label": "IP adres",
+            "placeholder": "IP adres of hostnaam"
+        },
+        "protocol": { 
+            "label": "Protocol"
+        },
+        "processing": "Verwerken...",
+        "error-philips-air": "Niet gelukt",
+        "error-incorrect-command": "Invoer is niet juist"
+    }
+}

@@ -1,0 +1,132 @@
+[
+    {
+        "id": "b84f3644.bb65b",
+        "type": "philips-air",
+        "z": "f1b80d65.62488",
+        "name": "",
+        "ipAddress": "192.168.1.xxx",
+        "protocol": "Http",
+        "x": 460,
+        "y": 3340,
+        "wires": [
+            [
+                "aa030d88.c6a5d8"
+            ]
+        ]
+    },
+    {
+        "id": "7148ca69.14b5d4",
+        "type": "inject",
+        "z": "f1b80d65.62488",
+        "name": "",
+        "topic": "",
+        "payload": "getStatus",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 170,
+        "y": 3300,
+        "wires": [
+            [
+                "b84f3644.bb65b"
+            ]
+        ]
+    },
+    {
+        "id": "aa030d88.c6a5d8",
+        "type": "debug",
+        "z": "f1b80d65.62488",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 670,
+        "y": 3340,
+        "wires": []
+    },
+    {
+        "id": "b67db7db.fdee",
+        "type": "inject",
+        "z": "f1b80d65.62488",
+        "name": "",
+        "topic": "",
+        "payload": "getWifi",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 160,
+        "y": 3340,
+        "wires": [
+            [
+                "b84f3644.bb65b"
+            ]
+        ]
+    },
+    {
+        "id": "ebdb4e2.a75be3",
+        "type": "inject",
+        "z": "f1b80d65.62488",
+        "name": "",
+        "topic": "",
+        "payload": "getFirmware",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 180,
+        "y": 3380,
+        "wires": [
+            [
+                "b84f3644.bb65b"
+            ]
+        ]
+    },
+    {
+        "id": "4da2c782.7fd9a8",
+        "type": "inject",
+        "z": "f1b80d65.62488",
+        "name": "",
+        "topic": "",
+        "payload": "getFilters",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 170,
+        "y": 3420,
+        "wires": [
+            [
+                "b84f3644.bb65b"
+            ]
+        ]
+    },
+    {
+        "id": "1debc28d.6f4acd",
+        "type": "inject",
+        "z": "f1b80d65.62488",
+        "name": "Set values",
+        "topic": "",
+        "payload": "{\"example\":\"content\", \"key\": \"value\"}",
+        "payloadType": "json",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 170,
+        "y": 3260,
+        "wires": [
+            [
+                "b84f3644.bb65b"
+            ]
+        ]
+    }
+]

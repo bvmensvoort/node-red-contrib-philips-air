@@ -4,7 +4,7 @@
         defaults: {
             name: { value: "" },
             ipAddress: { value: "", required: true },
-            protocol: { value: "http", required: true },
+            protocol: { value: "Http", required: true }
         },
         inputs:1,               // set the number of inputs - only 0 or 1
         outputs:1,              // set the number of outputs - 0 to n
@@ -29,15 +29,15 @@
 
 <script type="text/html" data-template-name="philips-air">
     <div class="form-row">
-        <label for="node-input-name"><i class="icon-tag"></i> <span data-i18n="philips-air.name.label"></span></label>
+        <label for="node-input-name"><span data-i18n="philips-air.name.label"></span></label>
         <input type="text" id="node-input-name" placeholder="Name">
     </div>
     <div class="form-row">
-        <label for="node-input-ip-address"><i class="icon-tag"></i> <span data-i18n="philips-air.ip-address.label"></span></label>
-        <input type="text" id="node-input-ip-address" data-i18n="[placeholder]philips-air.ip-address.placeholder" />
+        <label for="node-input-ipAddress"><span data-i18n="philips-air.ip-address.label"></span></label>
+        <input type="text" id="node-input-ipAddress" data-i18n="[placeholder]philips-air.ip-address.placeholder" />
     </div>
     <div class="form-row">
-        <label for="node-input-protocol"><i class="fa fa-arrow-left"></i> <span data-i18n="philips-air.protocol.label"></span></label>
+        <label for="node-input-protocol"><span data-i18n="philips-air.protocol.label"></span></label>
         <select type="text" id="node-input-protocol">
             <option value="Http">HTTP</option>
             <option value="PlainCoaP">Plain CoAP</option>

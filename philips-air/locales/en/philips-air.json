@@ -1,0 +1,19 @@
+{
+	"philips-air": {
+        "input-label": "Command as text or setting as object",
+        "output-label": "JSON object with information",
+        "name": { 
+            "label": "Name"
+        },
+        "ip-address": { 
+            "label": "IP Address",
+            "placeholder": "IP address or host name"
+        },
+        "protocol": { 
+            "label": "Protocol"
+        },
+        "processing": "Processing...",
+        "error-philips-air": "Failed",
+        "error-incorrect-command": "Input is incorrect"
+    }
+}
