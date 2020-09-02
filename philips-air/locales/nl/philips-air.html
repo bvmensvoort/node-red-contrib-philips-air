@@ -1,0 +1,50 @@
+<script type="text/x-red" data-help-name="philips-air">
+<p>Vraagt data op bij en kan instellingen doen op Philips Air Purifiers.</p>
+
+<h3>Configuratie</h3>
+<p>Om alles goed te gebruiken, is een ingestelde Philips Air Purifier nodig.<br/>
+Dit is te doen met de Air Matters App (<a href="https://play.google.com/store/apps/details?id=com.freshideas.airindex">Android</a> en <a href="https://apps.apple.com/us/app/air-matters/id477700080">iOS</a>.
+</p>
+<p>
+    Voor de configurait is in te stellen:
+    <ul>
+        <li><em>IP adres</em>: Dit is te vinden op de router</li>
+        <li><em>Protocol</em>: Dit is afhankelijk van het model van de Air Purifier. <q>De module is getest met verschillende modellen (AC2729, AC2889, AC1214) die over HTTP werken. Er is experimentele ondersteuning voor nieuwere modellen (na eind 2019) die via het CoAP protocol werken.</q><a href="https://github.com/rgerganov/py-air-control">py-air-cotnrol</a>
+</p>
+
+<h3>Invoer</h3>
+<p>
+Gebruik voor <code>msg.payload</code>:
+</p>
+<ul>
+    <li><code>getStatus</code>Geeft een object met de huidige status van de Air Purifier.</li>
+    <li><code>getWifi</code>Geeft een object met the WiFi instellingen (alleen met HTTP mogelijk).</li>
+    <li><code>getFirmware</code>Geeft een object met firmware informatie.</li>
+    <li><code>getFilters</code>Geeft een object met de luchtfilters.</li>
+    <li>een object, stelt de sleutel-waarde sets in op de Air Purifier.</li>
+</ul>
+
+<h3>Uitvoer</h3>
+<p>
+    Het resultaat komt als JSON in <code>msg.payload</code>.
+</p>
+<ul>
+    <li><code>pwr</code> Stroom: 1</li>
+    <li><code>pm25</code>  PM25: 4</li>
+    <li><code>rh</code>    Luchtvochtigheid: 32</li>
+    <li><code>rhset</code> Doel Luchtvochtigheid: 60</li>
+    <li><code>iaql</code>  Allergenen index: 1</li>
+    <li><code>temp</code>  Temperatuur: 22</li>
+    <li><code>func</code>  Functie: Verfrisser & Bevochtiger</li>
+    <li><code>mode</code>  Mode: M</li>
+    <li><code>om</code>    Ventilator snelheid: 2</li>
+    <li><code>aqil</code>  Licht sterkte: 100</li>
+    <li><code>uil</code>  0</li>
+    <li><code>dt</code>  0</li>
+    <li><code>ddp</code>  1</li>
+    <li><code>wl</code>    Water niveau: 100</li>
+    <li><code>cl</code>    Kinderslot: false</li>
+</ul>
+
+Bijvoorbeeld, het geeft de <a href="https://github.com/rgerganov/py-air-control">status data</a>.
+</script>

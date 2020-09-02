@@ -1,0 +1,51 @@
+<script type="text/x-red" data-help-name="philips-air">
+<p>Gets and data from Philips Air Purifiers and sets new values</p>
+
+<h3>Configuration</h3>
+<p>To setup smoothly, you have already set up a Philips Air Purifier.<br/>
+You can do this with the Air Matters App (<a href="https://play.google.com/store/apps/details?id=com.freshideas.airindex">Android</a> and <a href="https://apps.apple.com/us/app/air-matters/id477700080">iOS</a>.
+</p>
+<p>
+    For the Configuration, you can set up:
+    <ul>
+        <li><em>IP address</em>: You can find this in your router</li>
+        <li><em>Protocol</em>: This depends on the model of Air Purifier. <q>It is tested with several models (AC2729, AC2889, AC1214) which communicate over HTTP. There is an experimental support for newer models (after end of 2019) which communicate over the CoAP protocol.</q><a href="https://github.com/rgerganov/py-air-control">py-air-cotnrol</a>
+</p>
+
+<h3>Inputs</h3>
+<p>
+For the <code>msg.payload</code>:
+</p>
+<ul>
+    <li><code>getStatus</code>Returns an object representing the current status of the purifier.</li>
+    <li><code>getWifi</code>Returns an object representing the wifi settings of the purifier. Only supported with HTTP.</li>
+    <li><code>getFirmware</code>Returns an object representing information on the firmware of the purifier.</li>
+    <li><code>getFilters</code>Returns an object representing the air filters in the purifier.</li>
+    <li>an object sets the key-value pairs to the device.</li>
+</ul>
+
+<h3>Outputs</h3>
+<p>
+    The output is contained in a <code>msg.payload</code> property.
+    It contains a JSON with the result.
+</p>
+<ul>
+    <li><code>pwr</code> Power: 1</li>
+    <li><code>pm25</code>  PM25: 4</li>
+    <li><code>rh</code>    Humidity: 32</li>
+    <li><code>rhset</code> Target humidity: 60</li>
+    <li><code>iaql</code>  Allergen index: 1</li>
+    <li><code>temp</code>  Temperature: 22</li>
+    <li><code>func</code>  Function: Purification & Humidification</li>
+    <li><code>mode</code>  Mode: M</li>
+    <li><code>om</code>    Fan speed: 2</li>
+    <li><code>aqil</code>  Light brightness: 100</li>
+    <li><code>uil</code>  0</li>
+    <li><code>dt</code>  0</li>
+    <li><code>ddp</code>  1</li>
+    <li><code>wl</code>    Water level: 100</li>
+    <li><code>cl</code>    Child lock: false</li>
+</ul>
+
+For example, it outputs the <a href="https://github.com/rgerganov/py-air-control">status data</a>.
+</script>

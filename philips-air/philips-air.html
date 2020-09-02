@@ -1,6 +1,6 @@
 <script type="text/javascript">
     RED.nodes.registerType('philips-air', {
-        category: "function",
+        category: "devices",
         defaults: {
             name: { value: "" },
             ipAddress: { value: "", required: true },
@@ -8,7 +8,9 @@
         },
         inputs:1,               // set the number of inputs - only 0 or 1
         outputs:1,              // set the number of outputs - 0 to n
-        color: "#0066a1",
+        color: "#C0DEED",
+
+        icon: "font-awesome/fa-cloud",
         label: function() {
             return this.name || "Philips Air";
         },
@@ -16,13 +18,7 @@
             return this.name ? "node_label_italic" : "";
         },
         inputLabels: function() { return this._("philips-air.input-label")},
-        outputLabels: function() { return this._("philips-air.output-label")},
-        
-        oneditprepare: function() {
-            console.log("Loading Philips Air node");
-            var node = this;
-        },
-        oneditsave: function() {}
+        outputLabels: function() { return this._("philips-air.output-label")}
     });
 </script>
 
