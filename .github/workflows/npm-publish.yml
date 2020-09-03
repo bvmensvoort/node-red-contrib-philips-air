@@ -1,3 +1,4 @@
+# From https://github.com/marketplace/actions/publish-to-npm
 name: npm-publish
 on:
   push:
