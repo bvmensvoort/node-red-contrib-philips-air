@@ -42,8 +42,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: node-contrib-philips-air-${{ env.RELEASE_VERSION }}.tgz
-          asset_name: node-contrib-philips-air-${{ env.RELEASE_VERSION }}.tgz
+          asset_path: node-red-contrib-philips-air-${{ env.RELEASE_VERSION }}.tgz
+          asset_name: node-red-contrib-philips-air-${{ env.RELEASE_VERSION }}.tgz
           asset_content_type: application/gnutar
 
       - name: Upload Release Asset Checksum
@@ -53,8 +53,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: node-contrib-philips-air-${{ env.RELEASE_VERSION }}.tgz.sha256sum
-          asset_name: node-contrib-philips-air-${{ env.RELEASE_VERSION }}.tgz.sha256sum
+          asset_path: node-red-contrib-philips-air-${{ env.RELEASE_VERSION }}.tgz.sha256sum
+          asset_name: node-red-contrib-philips-air-${{ env.RELEASE_VERSION }}.tgz.sha256sum
           asset_content_type: text/plain
 
           # From https://github.com/marketplace/actions/publish-to-npm
