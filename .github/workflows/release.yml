@@ -53,13 +53,13 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: node-red-contrib-philips-air-${{ env.RELEASE_VERSION }}.tgz.sha256sum
-          asset_name: node-red-contrib-philips-air-${{ env.RELEASE_VERSION }}.tgz.sha256sum
+          asset_path: node-red-contrib-philips-air-${{ env.RELEASE_VERSION }}.tgz.sha256sums
+          asset_name: node-red-contrib-philips-air-${{ env.RELEASE_VERSION }}.tgz.sha256sums
           asset_content_type: text/plain
 
           # From https://github.com/marketplace/actions/publish-to-npm
-      - name: Publish to npm if version has been updated
-        uses: pascalgn/npm-publish-action@06e0830ea83eea10ed4a62654eeaedafb8bf50fc
+      - name: Publish to npm
+        uses: pascalgn/npm-publish-action@1.3.3
         env: # More info about the environment variables in the README
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Leave this as is, it's automatically generated
           NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }} # You need to set this in your repo settings
