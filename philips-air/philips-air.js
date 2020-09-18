@@ -19,11 +19,22 @@ module.exports = function (RED) {
         let paLib = philipsAirLib[protocol +"Client"];
         paLib = new paLib(config.ipAddress);
 
+        // Reset state on redeploy
+        node.status({});
+
         // Handle commands
         this.on('input', onInput);
         return;
 
         function onInput(msg) {
+            // Already set the status, because some methods seem to be synchronous
+            node.status({fill: "blue", shape: "dot", text: RED._("philips-air.processing")});
+            
+            // Apparently status is not set when using Python script, so get a little breathing room. 100 is needed for a status update.
+            setTimeout(()=> processInput(msg), 100);
+        }
+
+        function processInput(msg) {
             let promise;
             if (msg.payload === GET_STATUS_COMMAND) { promise = paLib.getStatus(); }
             else if (msg.payload === GET_WIFI_COMMAND && protocol === "Http") promise = paLib.getWifi();
@@ -32,7 +43,6 @@ module.exports = function (RED) {
             else if (typeof msg.payload === "object") { promise = paLib.setValues(msg.payload); }
             else { promise = Promise.reject(RED._("philips-air.error-incorrect-command-" + protocol)); }
             
-            node.status({fill: "blue", shape: "dot", text: RED._("philips-air.processing")});
             promise.then((result) => {
                     msg.payload = result;
                     node.send(msg);
