@@ -26,7 +26,14 @@ Or manually by installing ```npm install node-red-contrib-philips-air```.
 ## Available node
 Philips air
 
+[View examples](https://raw.githubusercontent.com/bvmensvoort/node-red-contrib-philips-air/master/examples/philips-air%20functionalities.json) to get started quickly.
 
 ## Changelog
-v0.0.1 (latest)
+v0.1.0 (latest)
+* Add support for CoAP and PlainCoAP protocols
+* Reset status on redeploy
+* Enhance error messages
+* Show Processing state before processing starts
+
+v0.0.1
 * Initial release
