@@ -14,6 +14,10 @@
         },
         "processing": "Verwerken...",
         "error-philips-air": "Niet gelukt",
-        "error-incorrect-command": "Invoer is niet juist"
+        "error-incorrect-command-Http": "Invoer is onjuist. Gebruik msg.payload voor: getStatus, getFilters, getWifi, getFirmware of een object zoals {'key': 'value'}.",
+        "error-incorrect-command-Coap": "Invoer is onjuist. Gebruik msg.payload voor: getStatus, getFilters, getFirmware or an object like {'key': 'value'}.",
+        "error-incorrect-command-PlainCoap": "Invoer is onjuist. Gebruik msg.payload voor: getStatus, getFilters, getFirmware or an object like {'key': 'value'}.",
+        "error-dependencies-not-installed": "Kan nog niet met het Philips-apparaat communiceren. Er zijn nog installaties nodig, bekijk welke Python3 packages het zijn op: https://developer.aliyun.com/mirror/npm/package/philips-air. De originele foutmelding: ",
+        "error-python-timeout": "Kan het Philips apparaat niet bereiken. Enkele dingen die kunnen helpen: gebruik een ander protocol, installeer nog enkele Python packages, Philips apparaat reageert gewoon niet op tijd. Voor meer informatie, ga naar https://developer.aliyun.com/mirror/npm/package/philips-air. De originele foutmelding: "
     }
 }

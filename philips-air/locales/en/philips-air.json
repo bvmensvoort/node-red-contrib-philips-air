@@ -14,6 +14,10 @@
         },
         "processing": "Processing...",
         "error-philips-air": "Failed",
-        "error-incorrect-command": "Input is incorrect"
+        "error-incorrect-command-Http": "Input is incorrect. Use msg.payload for: getStatus, getFilters, getWifi, getFirmware or an object like {'key': 'value'} to set values.",
+        "error-incorrect-command-Coap": "Input is incorrect. Use msg.payload for: getStatus, getFilters, getFirmware or an object like {'key': 'value'} to set values.",
+        "error-incorrect-command-PlainCoap": "Input is incorrect. Use msg.payload for: getStatus, getFilters, getFirmware or an object like {'key': 'value'} to set values.",
+        "error-dependencies-not-installed": "Cannot communicate with the Philips device yet. Some software needs to be installed. To see which Python3 packages are needed, go to: https://developer.aliyun.com/mirror/npm/package/philips-air. The original error message: ",
+        "error-python-timeout": "Cannot reach Philips device. Some things that could help: your Philips device uses another protocol, some Python packages need to be installed, Philips device just doesn't react in time. For more information go to https://developer.aliyun.com/mirror/npm/package/philips-air. The original error message: "
     }
 }
