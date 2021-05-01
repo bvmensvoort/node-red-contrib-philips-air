@@ -30,7 +30,10 @@ Philips air
 
 
 ## Changelog
-v0.1.0 (latest)
+v0.3.0 {latest)
+* Make errors catchable in Node-RED 1.x
+
+v0.1.0
 * Add support for CoAP and PlainCoAP protocols
 * Reset status on redeploy
 * Enhance error messages
