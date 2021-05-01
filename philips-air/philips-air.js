@@ -26,15 +26,20 @@ module.exports = function (RED) {
         this.on('input', onInput);
         return;
 
-        function onInput(msg) {
+        function onInput(msg, send, done) {
+            // For maximum backwards compatibility, check that send exists.
+            // If this node is installed in Node-RED 0.x, it will need to
+            // fallback to using `node.send`
+            send = send || function() { node.send.apply(node,arguments) }
+
             // Already set the status, because some methods seem to be synchronous
             node.status({fill: "blue", shape: "dot", text: RED._("philips-air.processing")});
             
             // Apparently status is not set when using Python script, so get a little breathing room. 100 is needed for a status update.
-            setTimeout(()=> processInput(msg), 100);
+            setTimeout(()=> processInput(msg, send, done), 100);
         }
 
-        function processInput(msg) {
+        function processInput(msg, send, done) {
             let promise;
             if (msg.payload === GET_STATUS_COMMAND) { promise = paLib.getStatus(); }
             else if (msg.payload === GET_WIFI_COMMAND && protocol === "Http") promise = paLib.getWifi();
@@ -45,14 +50,16 @@ module.exports = function (RED) {
             
             promise.then((result) => {
                     msg.payload = result;
-                    node.send(msg);
                     node.status({});
+                    send(msg);
                 })
                 .catch((result) => {
                     let errorMessage = addErrorSummary(result);
                     msg.payload = errorMessage;
-                    node.error(errorMessage);
                     node.status({fill: "red", shape: "dot", text: RED._("philips-air.error-philips-air") });
+
+                    if (done) { done(errorMessage); }   // Node-RED 1.0 compatible
+                    else { node.error(errorMessage); }  // Node-RED 0.x compatible
                 })
             ;
         }
