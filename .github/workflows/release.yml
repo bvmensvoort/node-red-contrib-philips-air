@@ -6,7 +6,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      RELEASE_VERSION: ${{ echo ${GITHUB_REF:11} }}
+      RELEASE_VERSION: ${{ github.ref }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v1
@@ -18,6 +18,7 @@ jobs:
 
       - name: Package project
         run: |
+          echo $RELEASE_VERSION &&
           ./package.sh
 
       - name: Create Release
