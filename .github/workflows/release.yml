@@ -19,7 +19,7 @@ jobs:
 
       - name: Set env
         run: |
-          echo "echo ${GITHUB_REF:11}" >> $RELEASE_VERSION
+          echo "RELEASE_VERSION=$(echo ${GITHUB_REF:11})" >> $GITHUB_ENV
 
       - name: Package project
         run: |
