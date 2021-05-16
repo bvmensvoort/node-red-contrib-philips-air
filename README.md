@@ -24,9 +24,23 @@ Use the pallette editor to install ```philips-air```.
 
 Or manually by installing ```npm install node-red-contrib-philips-air```.
 
+### For newer 2020 devices with CoAP protocol
+If your device is using the CoAP protocol, you need to install some extra Python packages.
+When using Node-RED in a Docker container, you need to [install the packages inside the Docker container](https://github.com/bvmensvoort/node-red-contrib-philips-air/issues/6).
+
 
 ## Available node
 Philips air
+
+## Connection issues
+### For errormessage: connect ECONNREFUSED
+* The node can reach the IP. Otherwise the error message would have been: Host Unreachable.
+* Then, make sure you access the Philips device with the Air Matters App. Maybe it is not connected to your WiFi yet.
+* It could be that the protocol is not http, but CoAP. (Note: accessing the URL in the browser on a http-device results in a timeout, eg: http://192.168.194.36:80).
+See [issue 5](https://github.com/bvmensvoort/node-red-contrib-philips-air/issues/5).
+
+### For errormessage: Cannot communicate with the Philips device yet...ETIMEDOUT
+See [issue 6](https://github.com/bvmensvoort/node-red-contrib-philips-air/issues/6).
 
 
 ## Changelog
